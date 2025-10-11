@@ -1,5 +1,21 @@
 colocar una base de datos y mostrar el tiempo real en el tablero
-hacer el funcionamiento del tiempo real en mi codigo
+------------------------------------------------------------------
+--hacer el funcionamiento del tiempo real en mi codigo--
+// Temporizador regresivo (1 segundo = 1 hora simulada)
+        timer = new Timer(3600000, e -> {
+            if (this.horas > 0) {
+                this.horas--;
+            } else {
+                ((Timer) e.getSource()).stop();
+                JOptionPane.showMessageDialog(null,
+                        "Tiempo terminado para " + nombre + " en la PC " + computadora,
+                        "Fin de Sesión", JOptionPane.INFORMATION_MESSAGE);
+                alFinalizar.run(); // libera la computadora
+            }
+        });
+        timer.start();
+    }
+------------------------------------------------------------------
 
 package internet;
 
