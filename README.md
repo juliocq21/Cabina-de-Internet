@@ -17,7 +17,7 @@ colocar una base de datos y mostrar el tiempo real en el tablero
         });
         timer.start();
     }
-
+.
 package internet;
 
 import java.io.*;
