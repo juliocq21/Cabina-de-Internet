@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package internet;
 
-/**
- *
- * @author LAB-USR-AREQUIPA
- */
 public class Cabina {
     private Cliente[] computadoras;
 
@@ -25,7 +17,7 @@ public class Cabina {
 
     public Cliente buscarCliente(String dni) {
         for (Cliente c : computadoras) {
-            if (c != null && c.dni.equals(dni)) {
+            if (c != null && c.usuario.equals(dni)) {
                 return c;
             }
         }
@@ -34,7 +26,7 @@ public class Cabina {
 
     public boolean eliminarCliente(String dni) {
         for (int i = 0; i < computadoras.length; i++) {
-            if (computadoras[i] != null && computadoras[i].dni.equals(dni)) {
+            if (computadoras[i] != null && computadoras[i].usuario.equals(dni)) {
                 computadoras[i].timer.stop(); // detener temporizador
                 computadoras[i] = null;
                 return true;
